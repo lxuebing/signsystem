@@ -58,9 +58,8 @@ class CourseController extends Controller
 
 
         $user = User::with('courses')->find($request['user-id']);
-
         $nowUser = Auth::user();
-        if(!$nowUser->can('add-user-course', $user)){
+        if(!$nowUser->can('add-user-course', $user) && $user->id != $nowUser->id){
             return ['code' => 0, 'msg' => '无权操作'];
         }
 
@@ -146,7 +145,7 @@ class CourseController extends Controller
 
 
         $nowUser = Auth::user();
-        if(!$nowUser->can('edit-user-course', $user)){
+        if(!$nowUser->can('edit-user-course', $user) && $user->id != $nowUser->id){
             return ['code' => 0, 'msg' => '无权操作'];
         }
 
@@ -214,7 +213,7 @@ class CourseController extends Controller
         $user = User::where('id', request('user-id'))->first();
 
         $nowUser = Auth::user();
-        if(!$nowUser->can('delete-user-course', $user)){
+        if(!$nowUser->can('delete-user-course', $user) && $user->id != $nowUser->id){
             return ['code' => 0, 'msg' => '无权操作'];
         }
 
@@ -232,7 +231,7 @@ class CourseController extends Controller
 
 
         $nowUser = Auth::user();
-        if(!$nowUser->can('delete-user-course', $user)){
+        if(!$nowUser->can('delete-user-course', $user) && $user->id != $nowUser->id){
             return ['code' => 0, 'msg' => '无权操作'];
         }
 
@@ -255,7 +254,7 @@ class CourseController extends Controller
         $inputUser = User::with('courses')->where('id', request('input-user-id'))->first();
 
         $nowUser = Auth::user();
-        if(!$nowUser->can('add-user-course', $nowUser)){
+        if(!$nowUser->can('add-user-course', $nowUser) && $user->id != $nowUser->id){
             return ['code' => 0, 'msg' => '无权操作'];
         }
 
