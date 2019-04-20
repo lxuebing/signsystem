@@ -21,7 +21,7 @@
                     <!--</el-form-item>-->
                 <!--</el-form>-->
             </el-col>
-            <el-col :span="4">
+            <el-col :span="4" class="button">
                 <el-button type="primary" @click="addUser()">添加</el-button>
                 <el-button type="primary" @click="inputVisible = true">导入</el-button>
             </el-col>
@@ -47,7 +47,7 @@
             </el-table-column>
             <el-table-column
                     prop="grouping"
-                    label="组别"
+                    label="班级"
                     sortable
             >
             </el-table-column>
@@ -264,5 +264,9 @@
 
     .el-upload-dragger{
         width:100%;
+    }
+
+    .button{
+        margin: 20px 0;
     }
 </style>

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 include_once ('wechat.php');
 
 
-Route::get('/test', 'UserController@test');
+Route::get('/test', '\App\Wechat\Controllers\CourseController@test');
 
 
 //后台界面

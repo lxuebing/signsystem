@@ -3,11 +3,11 @@
         <div style="margin-top: 20px;">
             <label >用户：</label>
             <span>{{ userId }}</span>
-            <a style="color: blue;cursor: pointer" @click="inputId">修改</a>
+            <span style="color: blue;cursor: pointer" @click="inputId">修改</span>
         </div>
 
         <div>
-            <div>
+            <div class="button">
                 <el-button v-if="$route.path == '/set/course/type/two'" type="primary" @click="changeType('/set/course/type/one')">格式一</el-button>
                 <el-button v-if="$route.path == '/set/course/type/one' || $route.path == '/set/course'" type="primary" @click="changeType('/set/course/type/two')">格式二</el-button>
                 <el-button type="primary" @click="addCourseVisible = true">添加课程</el-button>
@@ -379,5 +379,8 @@
 <style>
     .dialog-width>div{
         min-width: 520px;
+    }
+    .button{
+        margin: 20px 0;
     }
 </style>

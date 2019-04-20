@@ -149,8 +149,7 @@ class CourseController extends Controller
 
 
         $allStudents   = User::with('grouping', 'positions', 'courses')->orderBy('name_py')->get(['id', 'name', 'grouping_id','sex', 'location_id']);  //获得学生的信息
-
-
+        
         // 以id为键排列
         $students = [];
         $grades = [];
@@ -187,16 +186,18 @@ class CourseController extends Controller
 
         $users = User::all();
 
+        
         foreach ($users as $user) {
-            $name_pys = Pinyin::convert($user->name);
-            $name_py = "";
-            foreach ( $name_pys as $value){
-                $name_py .= $value." ";
-            }
-            echo $name_py;
-            $user->name_py = $name_py;
-            $user->save();
-            echo $user->name;
+            // $name_pys = Pinyin::convert($user->name);
+            // $name_py = "";
+            // foreach ( $name_pys as $value){
+            //     $name_py .= $value." ";
+            // }
+            // echo $name_py;
+            // $user->name_py = $name_py;
+            // $user->save();
+            echo $user->id;
+            echo "\n";
         }
 
 

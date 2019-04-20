@@ -1,6 +1,6 @@
 <template>
     <div >
-        <div>
+        <div class="button">
             <el-button type="primary" @click="illegalVisible = true">添加违规</el-button>
         </div>
 
@@ -354,6 +354,8 @@
     }
 </script>
 
-<style>
-
+<style scoped>
+.button{
+    margin: 20px 0;
+}
 </style>
