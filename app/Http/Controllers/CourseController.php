@@ -254,7 +254,7 @@ class CourseController extends Controller
         $inputUser = User::with('courses')->where('id', request('input-user-id'))->first();
 
         $nowUser = Auth::user();
-        if(!$nowUser->can('add-user-course', $nowUser) && $user->id != $nowUser->id){
+        if(!$nowUser->can('add-user-course', $nowUser) && $inputUser->id != $nowUser->id){
             return ['code' => 0, 'msg' => '无权操作'];
         }
 
